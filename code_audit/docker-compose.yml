@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+    code_audit:
+        build: .
+        image: code_audit
+        restart: unless-stopped
+        ports:
+            # - "10001:22"
+            - "10002:80"
+        volumes:
+          - ./html:/var/www/html

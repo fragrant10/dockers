@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+    centos_ssh:
+        build: .
+        image: centos_ssh
+        restart: unless-stopped
+        ports:
+            - "6717:22"
+            - "6718:80"
+            - "6719:3306"
+        volumes:
+          - ./php:/var/www/html
